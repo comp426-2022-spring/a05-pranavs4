@@ -24,7 +24,7 @@ if (args.help || args.h) {
     process.exit(0);
 }
 
-const logDB = require("./database.js");
+const logDB = require(".src/services/database.js");
 const morgan = require('morgan');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
