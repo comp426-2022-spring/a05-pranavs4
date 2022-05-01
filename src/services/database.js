@@ -32,7 +32,7 @@ if (row === undefined) {
 // Execute SQL commands that we just wrote above.
     logDB.exec(sqlInit);
 // Echo information about what we just did to the console.
-    //console.log('Log DB has been initialized with a new table.');
+  console.log('Log DB has been initialized with a new table.');
 } else {
 // Since the database already exists, echo that to the console.
     console.log('Log DB already exists.')

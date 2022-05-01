@@ -28,6 +28,7 @@ const logDB = require("./src/services/database.js");
 const morgan = require('morgan');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(express.static('./public'));
 
 
 args['port']
@@ -47,8 +48,13 @@ const server = app.listen(HTTP_PORT, () => {
 // }
 
 if(args.log != false && args.log != "false") {
- 
-    const accessLogStream = fs.createWriteStream("./data/log/access.log", {flags: 'a'})
+
+    const logsDir = "./log/"
+    if(!fs.existsSync(logsDir)) {
+        fs.mkdirSync(logsDir)
+    }
+    
+    const accessLogStream = fs.createWriteStream(logsDir +"access.log", {flags: 'a'})
     app.use(morgan('combined', {stream :accessLogStream}))
 }
 
