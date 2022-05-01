@@ -3,13 +3,25 @@ div.hidden {
 }
 
 div.active {
-  border: 5px solid red;
+  border: 5px solid blue;
+}
+
+div.inactive {
+  display:none;
+}
+
+ul li{
+  display: inline;
 }
 
 img.bigcoin {
-  width: 50px;
+  width: 75px;
 }
 
 img.smallcoin {
-  width: 50px;
+  width: 75px;
+}
+
+img#callcoin {
+  opacity:0.25;
 }
