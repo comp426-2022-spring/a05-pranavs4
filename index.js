@@ -24,7 +24,7 @@ if (args.help || args.h) {
     process.exit(0);
 }
 
-const logDB = require(".src/services/database.js");
+const logDB = require("./src/services/database.js");
 const morgan = require('morgan');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -48,7 +48,7 @@ const server = app.listen(HTTP_PORT, () => {
 
 if(args.log != false && args.log != "false") {
  
-    const accessLogStream = fs.createWriteStream("./access.log", {flags: 'a'})
+    const accessLogStream = fs.createWriteStream("./data/log/access.log", {flags: 'a'})
     app.use(morgan('combined', {stream :accessLogStream}))
 }
 
