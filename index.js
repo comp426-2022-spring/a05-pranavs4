@@ -51,7 +51,9 @@ if(args.log != false && args.log != "false") {
 
     const logsDir = "./log/"
     if(!fs.existsSync(logsDir)) {
+        
         fs.mkdirSync(logsDir)
+    
     }
     
     const accessLogStream = fs.createWriteStream(logsDir +"access.log", {flags: 'a'})
